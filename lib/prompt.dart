@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bullseye/textstyle.dart';
 
 class Prompt extends StatelessWidget {
   Prompt({@required this.targetValue});
@@ -8,8 +9,17 @@ class Prompt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text('YOUR BULLSEYE SHOULD BE '),
-        Text('$targetValue'),
+        Text(
+          'YOUR BULLSEYE SHOULD BE ',
+          style: LabelTextStyle.bodyText1(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            '$targetValue',
+            style: TargetTextStyle.bodyText1(context),
+          ),
+        ),
       ],
     );
   }
